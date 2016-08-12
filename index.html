@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/lib/knockout-3.2.0.js"></script>
+    <script src="js/lib/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class='container'>
+      <div class='listview'>
+        <!-- Header -->
+        <h1>Acadia National Park Summits</h1>
+        <!-- Filter -->
+        <div class="filter">
+          <!-- dropdown menu -->
+          <select id='dificulty'>
+            <option value='1'>All</option>
+            <option value='2'>499ft and under</option>
+            <option value='3'>500ft - 699ft</option>
+            <option value='4'>700ft - 999ft</option>
+            <option value='5'>1000ft and up</option>
+          </select>
+          <!-- Filter button -->
+          <input data-bind='click: filter' class='click' type='button' value="Filter">
+        </div>
+        <!-- The list view -->
+        <div class='list'>
+          <!-- Populates the list using knockout -->
+          <ul data-bind='foreach: locations'>
+            <p data-bind='text: title, click: openWindow' class='summit'></p>
+          </ul>
+        </div>
+      </div>
+      <!-- The map display location -->
+      <div id="map"></div>
+    </div>
+    <script src="js/app.js"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLA_vyUyWJEutBFXOV3OPZeZsMfVfyKWo&v=3&callback=initMap">
+    </script>
+  </body>
+</html>

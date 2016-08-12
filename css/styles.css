@@ -1,0 +1,169 @@
+@media screen and (max-width: 493px) {
+  h1 {
+    margin-left: 15px;
+    margin-top: 0px;
+    margin-right: 0px;
+    padding-top: 15px;
+    width: 90%;
+    color: white;
+    font-size: 25px;
+  }
+  ul {
+    padding-left: 5px;
+  }
+
+  .list {
+    color: white;
+    font-size: 15px;
+    padding-right: 5px;
+    height: 450px;
+    overflow-y: scroll;
+  }
+  #header {
+    height: 15%;
+    background-color: black;
+  }
+
+  #map {
+    height: 100%;
+    bottom: 0px;
+    left: 130px;
+    right: 0px;
+    position: absolute;
+  }
+
+  .listview {
+    background-color: black;
+    margin-right: 0px;
+    height: 100%;
+    width: 130px;
+  }
+  #dificulty {
+    margin-left: 5px;
+    width: 60%;
+    cursor: pointer;
+  }
+  .click {
+    width: 30%;
+    cursor: pointer;
+  }
+}
+@media screen and (min-width: 494px) and (max-width: 991px) {
+  h1 {
+    margin-left: 15px;
+    margin-top: 0px;
+    margin-right: 0px;
+    padding-top: 15px;
+    width: 90%;
+    color: white;
+  }
+  ul {
+    padding-left: 10px;
+    padding-right: 5px;
+  }
+
+  .list {
+    color: white;
+    font-size: 25px;
+    height: 750px;
+    overflow-y: scroll;
+  }
+  .listview {
+    background-color: black;
+    margin-right: 0px;
+    height: 100%;
+    width: 215px;
+  }
+
+  #map {
+    height: 100%;
+    bottom: 0px;
+    left: 215px;
+    right: 0px;
+    position: absolute;
+  }
+  #dificulty {
+    margin-left: 15px;
+    width: 60%;
+    cursor: pointer;
+  }
+  .click {
+    width: 30%;
+    cursor: pointer;
+  }
+}
+@media screen and (min-width: 992px) {
+  h1 {
+    margin-left: 15px;
+    margin-top: 0px;
+    margin-right: 0px;
+    padding-top: 15px;
+    width: 90%;
+    color: white;
+  }
+
+  ul {
+    padding-left: 15px;
+  }
+
+  .list {
+    color: white;
+    font-size: 25px;
+    height: 550px;
+    overflow-y: scroll;
+  }
+
+  #header {
+    height: 70px;
+    background-color: black;
+  }
+
+  #map {
+    height: 100%;
+    bottom: 0px;
+    left: 362px;
+    right: 0px;
+    position: absolute;
+  }
+
+  .listview {
+    background-color: black;
+    margin-right: 0px;
+    height: 100%;
+    width: 365px;
+  }
+  #dificulty {
+    margin-left: 15px;
+    width: 60%;
+    cursor: pointer;
+  }
+  .click {
+    width: 30%;
+    cursor: pointer;
+  }
+}
+
+html,
+body {
+  font-family: Arial, sans-serif;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  height: 100%;
+}
+
+.summit {
+  cursor: pointer;
+}
+
+.infowindowTitle {
+  font-size: 25px;
+  padding-bottom: 10px;
+}
+
+#images {
+  text-align: center;
+}
