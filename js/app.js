@@ -1,3 +1,5 @@
+/* Much of the Google maps api parts of this project came from watching the Google Maps api
+section of this course.*/
 // Model
 var summits = [
   // 1000ft plus
@@ -52,6 +54,7 @@ function initMap() {
 }
 
 // Function to grab photos from flickr
+// Modified code to work how I wanted from http://api.jquery.com/jquery.getjson/
 function inputImage(tag) {
   var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
   $.getJSON(flickerAPI, {
@@ -59,7 +62,7 @@ function inputImage(tag) {
     tagmode: "any",
     format: "json"
   })
-    .done(function(data) {
+    .success(function(data) {
         console.log("posted");
         $.each(data.items, function( i, item ) {
           $( "<img>" ).attr( "src", item.media.m ).appendTo( "#images" );
@@ -70,6 +73,8 @@ function inputImage(tag) {
     })
     .fail(function(jqxhr, textStatus, error) {
       console.log("failed");
+      // acadiaGeneric.jpg from http://atravelinfos.com/acadia-national-park-see-the-peregrines-and-natural-beauty.html
+      // Photo by Aleen Robert
       $( "<img>" ).attr({src: 'imgs/acadiaGeneric.jpg', alt: 'Acadia National Park'}).appendTo( "#images" );
   });
 }
