@@ -5,6 +5,7 @@ Park. A list view on the left hand side provides a filtering option for easy use
 
 How to run:
   Go to http://ibmalo95.github.io/Neighborhood-Map/.
+  To run locally, clone the repository and then open index.html in the browser.
 
 Possible upgrades:
   1. A more accurate image display
