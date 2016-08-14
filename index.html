@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/lib/knockout-3.2.0.js"></script>
-    <script src="js/lib/jquery.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-2.2.4.min.js"
+      integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+      crossorigin="anonymous"></script>
   </head>
   <body>
     <div class='container'>
@@ -23,7 +26,7 @@
         <div class='list'>
           <!-- Populates the list using knockout -->
           <ul data-bind='foreach: locations'>
-            <p data-bind='text: title, click: openWindow' class='summit'></p>
+            <p data-bind='text: title, click: openWindow, visible: visibility' class='summit'></p>
           </ul>
         </div>
       </div>

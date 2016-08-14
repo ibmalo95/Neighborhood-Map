@@ -127,6 +127,7 @@ function ViewModel() {
       });
     // make marker an attribute of the summit
     summit.marker = marker;
+    summit.visibility = ko.observable(true);
 
     // Create an onclick event to open an infowindow at each marker.
     marker.addListener('click', function() {
@@ -145,6 +146,7 @@ function ViewModel() {
 
   this.filterText = ko.observableArray(dropdownOptions);
   this.selectedValue = ko.observable('1');
+
   // if a summit is clicked in the list view bring up the infowindow
   openWindow = function() {
     // make all other marker animations null
@@ -158,18 +160,18 @@ function ViewModel() {
   // filter through the list based on the dropdown value
   filter = function() {
     dropdownValue = this.selectedValue();
-    this.locations.removeAll();
     for (var i = 0; i < summits.length; i++) {
       if (dropdownValue === 'All'){
-        this.locations.push(summits[i]);
         summits[i].marker.setVisible(true);
+        summits[i].visibility(true);
       }
       else if (summits[i].group === dropdownValue) {
-        this.locations.push(summits[i]);
         summits[i].marker.setVisible(true);
+        summits[i].visibility(true);
       }
       else {
         summits[i].marker.setVisible(false);
+        summits[i].visibility(false);
       }
     }
   }
