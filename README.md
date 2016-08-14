@@ -8,7 +8,8 @@ How to run:
   To run locally, clone the repository and then open index.html in the browser.
 
 Possible upgrades:
-  1. A more accurate image display
+  1. A more accurate image display(Consider using instagram; heard their api has
+    better documentation);
   2. Use of a different API that has more information on hiking
 
 Bugs:
