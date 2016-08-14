@@ -19,7 +19,7 @@
         <!-- Filter -->
         <div class="filter">
           <!-- dropdown menu -->
-          <select id='dificulty' data-bind='options: filterText, value: selectedValue'></select>
+          <select id='difficulty' data-bind='options: filterText, value: selectedValue'></select>
           <!-- Filter button -->
           <input data-bind='click: filter' class='click' type='button' value="Filter">
         </div>
@@ -27,7 +27,7 @@
         <div class='list'>
           <!-- Populates the list using knockout -->
           <ul data-bind='foreach: locations'>
-            <p data-bind='text: title, click: openWindow, visible: visibility' class='summit'></p>
+            <li data-bind='text: title, click: openWindow, visible: visibility' class='summit'></li>
           </ul>
         </div>
       </div>

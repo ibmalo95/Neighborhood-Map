@@ -6,6 +6,12 @@ body {
   padding: 0;
 }
 
+li {
+  list-style-type: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 .container {
   height: 100%;
 }
@@ -65,10 +71,10 @@ body {
     height: 100%;
     width: 130px;
   }
-  
+
   /*Made background white so dropdown and button are visible in dev tools
   otherwise they are not visible on the black background*/
-  #dificulty {
+  #difficulty {
     margin-left: 5px;
     width: 60%;
     cursor: pointer;
@@ -121,7 +127,7 @@ body {
 
   /*Made background white so dropdown and button are visible in dev tools
   otherwise they are not visible on the black background*/
-  #dificulty {
+  #difficulty {
     margin-left: 15px;
     width: 60%;
     cursor: pointer;
@@ -176,7 +182,7 @@ body {
     width: 365px;
   }
 
-  #dificulty {
+  #difficulty {
     margin-left: 15px;
     width: 60%;
     cursor: pointer;
