@@ -15,13 +15,7 @@
         <!-- Filter -->
         <div class="filter">
           <!-- dropdown menu -->
-          <select id='dificulty'>
-            <option value='1'>All</option>
-            <option value='2'>499ft and under</option>
-            <option value='3'>500ft - 699ft</option>
-            <option value='4'>700ft - 999ft</option>
-            <option value='5'>1000ft and up</option>
-          </select>
+          <select id='dificulty' data-bind='options: filterText, value: selectedValue'></select>
           <!-- Filter button -->
           <input data-bind='click: filter' class='click' type='button' value="Filter">
         </div>
@@ -38,7 +32,7 @@
     </div>
     <script src="js/app.js"></script>
     <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLA_vyUyWJEutBFXOV3OPZeZsMfVfyKWo&v=3&callback=initMap">
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLA_vyUyWJEutBFXOV3OPZeZsMfVfyKWo&v=3&callback=initMap" onerror='window.alert("No map available!")'>
     </script>
   </body>
 </html>
