@@ -56,7 +56,7 @@ function initMap() {
 
 // Function to grab photos from flickr
 // Modified code to work how I wanted from http://api.jquery.com/jquery.getjson/
-function inputImage(tag) {
+function inputImage(tag, infowindow) {
   var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
   $.getJSON(flickerAPI, {
     tags: tag,
@@ -66,7 +66,7 @@ function inputImage(tag) {
     .done(function(data) {
         console.log("posted");
         $.each(data.items, function( i, item ) {
-          $( "<img>" ).attr( "src", item.media.m ).appendTo( "#images" );
+          infowindow.setContent('<div id="images"><div class="infowindowTitle">' + tag + "</div><img src='" + item.media.m + "'></div>");
           if ( i === 0 ) {
             return false;
           }
@@ -76,8 +76,8 @@ function inputImage(tag) {
       console.log("failed");
       // acadiaGeneric.jpg from http://atravelinfos.com/acadia-national-park-see-the-peregrines-and-natural-beauty.html
       // Photo by Aleen Robert
-      $( "<img>" ).attr({src: 'imgs/acadiaGeneric.jpg', alt: 'Acadia National Park'}).appendTo( "#images" );
-      $("<p>Request failed</p>").appendTo("#images");
+      infowindow.setContent("<div id='images'><div class='infowindowTitle'>" + tag + "</div><img src='imgs/acadiaGeneric.jpg' alt='Acadia National Park'><p>Request failed</p></div>");
+
   });
 }
 
@@ -88,9 +88,8 @@ function populateInfoWindow(marker, infowindow) {
   // Check to make sure the infowindow is not already opened on this marker.
   if (infowindow.marker != marker) {
     infowindow.marker = marker;
-    infowindow.setContent('<div id="images"><div class="infowindowTitle">' + marker.title + '</div></div>');
     // plug in image
-    inputImage(marker.title);
+    inputImage(marker.title, infowindow);
     infowindow.open(map, marker);
     // Make sure the marker property is cleared if the infowindow is closed.
     infowindow.addListener('closeclick',function(){
