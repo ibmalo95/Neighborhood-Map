@@ -13,5 +13,7 @@ Possible upgrades:
   2. Use of a different API that has more information on hiking
 
 Bugs:
-  1. A previously open info-window stays on the screen even after the filter is
+  1. A previously open info-window stays on the screen after the filter is
     applied.
+  2. Can't immediately reopen a window after you close it.
+  3. Two info windows display other markers info windows.
