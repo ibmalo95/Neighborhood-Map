@@ -57,7 +57,7 @@ function initMap() {
 // Function to grab photos from flickr
 // Modified code to work how I wanted from http://api.jquery.com/jquery.getjson/
 function inputImage(tag, infowindow) {
-  var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+  var flickerAPI = "https://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
   $.getJSON(flickerAPI, {
     tags: tag,
     tagmode: "any",
