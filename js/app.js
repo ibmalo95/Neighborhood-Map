@@ -89,6 +89,7 @@ function populateInfoWindow(marker, infowindow) {
 
   if (infowindow.marker != marker) {
     infowindow.marker = marker;
+    console.log(marker.title);
     // plug in image
     inputImage(marker.title, infowindow);
     infowindow.open(map, marker);
