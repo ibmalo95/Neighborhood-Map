@@ -86,14 +86,17 @@ function inputImage(tag, infowindow) {
 // on that markers position.
 function populateInfoWindow(marker, infowindow) {
   // Check to make sure the infowindow is not already opened on this marker.
+
   if (infowindow.marker != marker) {
     infowindow.marker = marker;
     // plug in image
     inputImage(marker.title, infowindow);
     infowindow.open(map, marker);
+
     // Make sure the marker property is cleared if the infowindow is closed.
     infowindow.addListener('closeclick',function(){
       infowindow.close();
+      infowindow.marker = null;
       marker.setAnimation(null);
     });
   }
