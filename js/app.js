@@ -66,6 +66,8 @@ function inputImage(tag, infowindow) {
     .done(function(data) {
       // no flickr images returned
       if (data.items.length === 0) {
+        // acadiaGeneric.jpg from http://atravelinfos.com/acadia-national-park-see-the-peregrines-and-natural-beauty.html
+        // Photo by Aleen Robert
         infowindow.setContent("<div id='images'><div class='infowindowTitle'>" + tag + "</div><img src='imgs/acadiaGeneric.jpg' alt='Acadia National Park'><p>Acadia National Park</p></div>");
       }
       else {
