@@ -15,4 +15,3 @@ Possible upgrades:
 Bugs:
   1. A previously open info-window stays on the screen after the filter is
     applied.
-  2. Two info windows (Knight Nubble and McFarland Mt.) display other markers info windows.

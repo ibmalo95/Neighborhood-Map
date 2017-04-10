@@ -64,13 +64,20 @@ function inputImage(tag, infowindow) {
     format: "json"
   })
     .done(function(data) {
-        console.log("posted");
+      // no flickr images returned
+      if (data.items.length === 0) {
+        infowindow.setContent("<div id='images'><div class='infowindowTitle'>" + tag + "</div><img src='imgs/acadiaGeneric.jpg' alt='Acadia National Park'><p>Acadia National Park</p></div>");
+      }
+      else {
         $.each(data.items, function( i, item ) {
+        // Image content from flickr's public photos
           infowindow.setContent('<div id="images"><div class="infowindowTitle">' + tag + "</div><img src='" + item.media.m + "'></div>");
+          // only display one image
           if ( i === 0 ) {
             return false;
           }
         });
+      }
     })
     .fail(function(jqxhr, textStatus, error) {
       console.log("failed");
@@ -85,11 +92,10 @@ function inputImage(tag, infowindow) {
 // one infowindow which will open at the marker that is clicked, and populate based
 // on that markers position.
 function populateInfoWindow(marker, infowindow) {
-  // Check to make sure the infowindow is not already opened on this marker.
 
+  // Check to make sure the infowindow is not already opened on this marker.
   if (infowindow.marker != marker) {
     infowindow.marker = marker;
-    console.log(marker.title);
     // plug in image
     inputImage(marker.title, infowindow);
     infowindow.open(map, marker);
@@ -102,7 +108,7 @@ function populateInfoWindow(marker, infowindow) {
     });
   }
 }
-// Marker animation when clicked
+// Marker bounce animation when clicked
 function toggleBounce(marker) {
   if (marker.getAnimation() != null) {
     marker.setAnimation(null);
@@ -162,6 +168,8 @@ function ViewModel() {
   // TODO: Get any open infowindows to exit
   // filter through the list based on the dropdown value
   filter = function() {
+    
+
     dropdownValue = this.selectedValue();
     for (var i = 0; i < summits.length; i++) {
       if (dropdownValue === 'All'){
